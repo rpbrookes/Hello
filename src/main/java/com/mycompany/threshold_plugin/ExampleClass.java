@@ -11,5 +11,6 @@ package com.mycompany.threshold_plugin;
  */
 public class ExampleClass {
     // Test
+    // hello
     
 }
