@@ -1,4 +1,4 @@
-package com.mycompany.threshold_plugin;
+package roi_plugin;
 
 import ij.IJ;
 import ij.plugin.PlugIn;
@@ -7,7 +7,7 @@ import ij.ImagePlus;
 import java.io.IOException;
 import java.util.Observable;
 
-public class Threshold_Plugin extends Observable implements PlugIn {
+public class RoI_Plugin extends Observable implements PlugIn {
 
     public void run(String arg) {
 
@@ -23,29 +23,13 @@ public class Threshold_Plugin extends Observable implements PlugIn {
             e.printStackTrace();
         }
 
-        // Spinner Section
-        JSpinnerTest mySpinner = new JSpinnerTest();
-        mySpinner.showFrame();
 
         // ImageJ Section
         // Opens Image
         ImagePlus imp = IJ.openImage("http://wsr.imagej.net/images/blobs.gif");
         imp.show();
 
-        // Opens Threshold
-        IJ.setAutoThreshold(imp, "Default");
 
-        // Sets Threshold values
-        // IJ.setRawThreshold(imp, IJ.getNumber("prompt", 6), IJ.getNumber("prompt", 7), null);
-        IJ.setRawThreshold(imp, 6, 7, null);
-
-
-        // Sleeps to view changes
-        try {
-            Thread.sleep(15000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
         // Closes Threshold window
         IJ.run("Close");
